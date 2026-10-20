@@ -1,0 +1,49 @@
+{
+  "upstream": {
+    "url": "https://github.com/cursor/plugins.git",
+    "branch": "main",
+    "path": "pstack"
+  },
+  "headerUrl": "https://github.com/cursor/plugins/blob/main/pstack/",
+  "noHeader": ["package.json", "bun.lock", "bun.lockb"],
+  "pathRules": [
+    { "pattern": "poteto", "to": "mineru" },
+    { "pattern": "(?<![A-Za-z])pstack", "to": "mstack" }
+  ],
+  "textRules": [
+    { "pattern": "https://github\\.com/cursor/plugins/blob/main/pstack/", "to": "https://github.com/Mineru98/mstack/blob/main/" },
+    { "pattern": "https://github\\.com/cursor/plugins/tree/main/pstack", "to": "https://github.com/Mineru98/mstack" },
+    { "pattern": "Poteto", "to": "Mineru" },
+    { "pattern": "poteto", "to": "mineru" },
+    { "pattern": "(?<![A-Za-z])Pstack", "to": "Mstack" },
+    { "pattern": "(?<![A-Za-z])pstack", "to": "mstack" },
+    { "pattern": "(?<![A-Za-z])PSTACK", "to": "MSTACK" }
+  ],
+  "skip": [
+    { "path": ".cursor-plugin/", "reason": "Cursor 전용 매니페스트다. mstack은 .claude-plugin/과 .codex-plugin/을 따로 둔다." },
+    { "path": "plugin.json", "reason": "mstack은 자체 매니페스트와 버전을 가진다. 버전 변화는 status에서 참고만 한다." },
+    { "path": "LICENSE", "reason": "mstack의 라이선스 표기를 유지한다." },
+    { "path": ".gitignore", "reason": "mstack 저장소 전용 .gitignore를 쓴다." },
+    { "path": "assets/", "reason": "브랜드 자산(로고)은 mstack 것을 유지한다." },
+    { "path": "docs/guide/images/", "reason": "가이드 이미지는 mstack 브랜딩으로 다시 만든 것을 유지한다." }
+  ],
+  "manual": [
+    { "path": "README.md", "reason": "mstack README는 소개, 설치, 브랜딩을 다시 썼다. upstream diff를 읽고 해당되는 내용만 수동 반영한다." },
+    { "path": "docs/harness/", "reason": "upstream은 Cursor를 Claude Code로 옮기는 어댑터 문서이고, mstack은 Claude Code와 Codex 겸용 매핑표다. 문서 목적이 달라 병합하지 않는다. 새 도구나 필드 이름이 생겼는지만 확인해 매핑표에 행을 추가한다." }
+  ],
+  "lintIgnorePaths": ["docs/harness/", "node_modules/", ".claude/"],
+  "lintAllow": [
+    { "path": "README.md", "rule": "cursor-tool", "reason": "mineru-agent 설명에서 generalPurpose로 대체하면 안 된다고 의도적으로 언급한다." }
+  ],
+  "lint": [
+    { "id": "brand-leftover", "pattern": "(?<![A-Za-z])pstack|poteto", "flags": "i", "message": "pstack/poteto 개명이 누락됐다." },
+    { "id": "cursor-product", "pattern": "\\bCursor\\b|\\.cursor[/-]|cursor/plugins|cursor-plugins?\\b", "message": "Cursor 제품명이나 경로다. docs/harness의 매핑표대로 중립 표현으로 바꾼다." },
+    { "id": "cursor-noun", "pattern": "\\bcursor (automation|rule|plugin|setting|agent|ide|team|cloud)s?\\b", "flags": "i", "message": "Cursor 기능을 가리키는 표현이다. 중립 표현으로 바꾼다." },
+    { "id": "mdc-rule", "pattern": "\\.mdc\\b", "message": "Cursor 규칙 파일(.mdc)이다. mstack-models 규칙 표현으로 바꾼다." },
+    { "id": "cursor-tool", "pattern": "`Task`|\\bTask (tool|subagent)s?\\b|\\bAskQuestion\\b|\\btodolist\\b|\\bgeneralPurpose\\b|readonly: (true|false)", "message": "Cursor 도구/필드 이름이다. 'the subagent tool', 'the question tool', 'the todo list' 같은 중립 표현으로 바꾼다." },
+    { "id": "cursor-cloud", "pattern": "environment: \"(cloud|local)\"|cloud_base_branch", "message": "Cursor 클라우드 에이전트 필드다. 'own git worktree and branch' 같은 중립 표현으로 바꾼다." },
+    { "id": "cursor-model-slug", "pattern": "\\bgrok-[0-9]|claude-opus-[0-9]-[0-9]-|\\bgpt-[0-9]+[.-][0-9]", "message": "Cursor 기본 모델 슬러그다. mstack 기본값(inherit-parent 또는 'opus xhigh' 형식)으로 바꾼다." },
+    { "id": "install-command", "pattern": "/add-plugin\\b", "message": "Cursor 설치 명령이다." },
+    { "id": "conflict-marker", "pattern": "^(<{7}|>{7})( |$)", "message": "병합 충돌 표지가 남아 있다." }
+  ]
+}
