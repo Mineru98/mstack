@@ -1,0 +1,20 @@
+{
+  "name": "ax",
+  "owner": {
+    "name": "Mineru98"
+  },
+  "metadata": {
+    "description": "mstack: rigorous agent workflows you can parallelize with confidence.",
+    "version": "0.1.0",
+    "pluginRoot": "."
+  },
+  "plugins": [
+    {
+      "name": "mstack",
+      "source": "./",
+      "description": "rigorous agent workflows you can parallelize with confidence.",
+      "version": "0.1.0",
+      "category": "developer-tools"
+    }
+  ]
+}

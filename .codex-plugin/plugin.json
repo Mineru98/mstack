@@ -1,0 +1,31 @@
+{
+  "name": "mstack",
+  "version": "0.1.0",
+  "description": "if you want to go fast, go deep first. mstack helps you write less, but higher quality code. rigorous agent workflows you can parallelize with confidence.",
+  "author": {
+    "name": "Mineru98"
+  },
+  "homepage": "https://github.com/Mineru98/mstack",
+  "repository": "https://github.com/Mineru98/mstack",
+  "license": "MIT",
+  "keywords": [
+    "mstack",
+    "mineru-mode",
+    "workflow",
+    "principles",
+    "agent-style",
+    "subagents",
+    "unslop"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "mstack",
+    "shortDescription": "Rigorous agent workflows that write less, higher quality code",
+    "longDescription": "mstack helps you write less, but higher quality code. Rigorous agent workflows and engineering principles you can parallelize with confidence.",
+    "developerName": "Mineru98",
+    "category": "Developer Tools",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
+  }
+}
