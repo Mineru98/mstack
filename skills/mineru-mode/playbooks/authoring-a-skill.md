@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/playbooks/authoring-a-skill.md -->
 ### Authoring or modifying a skill
 
 **You own the skill's voice.**

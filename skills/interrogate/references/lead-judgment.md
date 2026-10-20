@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/interrogate/references/lead-judgment.md -->
 # Lead Judgment Framework
 
 ## Filtering Principles

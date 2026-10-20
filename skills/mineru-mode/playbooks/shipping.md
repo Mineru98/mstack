@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/playbooks/shipping.md -->
 ### Shipping
 
 **You own what lands. Verify each PR independently, land only the verified run from the root, then keep your hands off the stack.**

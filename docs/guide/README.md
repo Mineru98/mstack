@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/docs/guide/README.md -->
 # The mstack guide
 
 mstack works best when you stop micromanaging the agent. You describe what you want and how you'll know it's done. `/mineru-mode` picks the playbook, runs the other skills as the steps need them, and shows you the evidence. This guide teaches that habit with realistic prompts.

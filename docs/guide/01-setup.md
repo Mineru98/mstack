@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/docs/guide/01-setup.md -->
 # Set up mstack
 
 In this page you install the plugin, pick which models mstack uses, and run your first task. Setup is one command plus a short conversation.

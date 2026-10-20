@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/create-verification-skill/references/feature-map-example/search.md -->
 # Search notes
 
 Search lets a user find notes by title or body text, inspect a matching note, and distinguish no matches from an unavailable search.

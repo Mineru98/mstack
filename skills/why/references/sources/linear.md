@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/why/references/sources/linear.md -->
 # Linear Tickets
 
 ## What this source contains

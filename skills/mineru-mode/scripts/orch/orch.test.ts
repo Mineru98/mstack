@@ -1,3 +1,4 @@
+// upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/scripts/orch/orch.test.ts
 import { afterEach, describe, expect, it } from "bun:test";
 import {
   chmod,

@@ -1,4 +1,5 @@
 ---
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/make-bot-ui/SKILL.md
 name: make-bot-ui
 description: >-
   Use when building a custom UI (page, dashboard, buttons) that should wake a

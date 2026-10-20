@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/playbooks/session-pickup.md -->
 ### Session pickup
 
 **You own the resume point. Read the prior trail, don't redo it.**

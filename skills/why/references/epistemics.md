@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/why/references/epistemics.md -->
 # Epistemics
 
 How to reason about confidence when evidence is historical, fragmentary, and sometimes contradictory, and how to tell the user without flattening it into false certainty. Code shows what it does, not *why it exists*. The why lives in commits, PRs, tickets, docs, and conversations, all incomplete, biased, and sometimes missing. Pretending otherwise produces confident-sounding guesses that mislead the user.

@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/how/references/explainer-prompt.md -->
 # Explainer Prompt Template
 
 Build the explainer subagent's prompt from this template. Fill in the placeholders.

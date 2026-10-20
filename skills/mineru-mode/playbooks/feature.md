@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/playbooks/feature.md -->
 ### Feature
 
 **You own the design. Plan, review, verify.** Delegate implementation. Stay in the lead.

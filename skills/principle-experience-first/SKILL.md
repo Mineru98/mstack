@@ -1,4 +1,5 @@
 ---
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/principle-experience-first/SKILL.md
 name: principle-experience-first
 description: "Apply when product, UX, or feature-scope tradeoffs come up. Choose user delight over implementation convenience; ship fewer polished features over more rough ones."
 disable-model-invocation: true

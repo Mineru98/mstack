@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/docs/harness/claude-code.md -->
 # mstack in Claude Code
 
 mstack skills name each tool once as a pair, such as "the subagent tool (`Agent` in Claude Code, `spawn_agent` in Codex)", then use the neutral phrase. In Claude Code, read this file once per session, then map each neutral phrase with the tables below. `<mstack>` means the folder that holds `skills/` and `docs/`. If a field has no row, drop it and say so. Never pass a field or value the tool schema rejects.

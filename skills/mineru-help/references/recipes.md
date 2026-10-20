@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-help/references/recipes.md -->
 # Prompts worth copying
 
 Swap in the real paths, skills, and done checks. Informal wording works.

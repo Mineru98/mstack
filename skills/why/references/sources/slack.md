@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/why/references/sources/slack.md -->
 # Slack Conversations
 
 ## How to search it

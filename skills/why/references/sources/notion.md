@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/why/references/sources/notion.md -->
 # Notion Docs
 
 ## What this source contains

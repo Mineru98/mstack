@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/why/references/sources/code-archaeology.md -->
 # Code Archaeology (git + in-repo)
 
 ## What this source contains

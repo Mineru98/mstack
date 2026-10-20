@@ -1,3 +1,4 @@
+// upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/scripts/watch-pr/types.compile.ts
 import { parsePrNumber } from "./types.ts";
 import type {
   CiClean,

@@ -1,4 +1,5 @@
 ---
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-help/SKILL.md
 name: mineru-help
 description: Guides users through mstack setup, /mineru-mode, and picking the skill, playbook, or principle for a task. Type /mineru-help with a question.
 disable-model-invocation: true

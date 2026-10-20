@@ -1,4 +1,5 @@
 ---
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/SKILL.md
 name: mineru-mode
 description: mineru's agent style for concise, detailed responses, deliberate subagents, unslopped prose, simple code, and verified work. Use for mineru, /mineru-mode, or requests to work in this style.
 disable-model-invocation: true

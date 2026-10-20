@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/playbooks/prototype.md -->
 ### Prototype
 
 **You own the design decision, not the code. The prototype is a throwaway instrument. The real build follows Feature.**

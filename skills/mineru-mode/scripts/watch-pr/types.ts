@@ -1,3 +1,4 @@
+// upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/scripts/watch-pr/types.ts
 declare const prNumberBrand: unique symbol;
 export type PrNumber = number & { readonly [prNumberBrand]: "PrNumber" };
 export type NonEmpty<T> = readonly [T, ...T[]];

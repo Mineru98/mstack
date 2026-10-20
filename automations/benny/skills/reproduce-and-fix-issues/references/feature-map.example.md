@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/automations/benny/skills/reproduce-and-fix-issues/references/feature-map.example.md -->
 # Feature-map example
 
 Map every user-facing feature Benny may reproduce. Read the relevant section before driving the app. Keep this map at the user point of view. Discover internals and current code paths at runtime instead of freezing them here.

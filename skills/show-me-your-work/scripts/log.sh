@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/show-me-your-work/scripts/log.sh
 # Append a well-formed row to a show-me-your-work decision log (TSV).
 # Usage: log.sh <logfile> <phase> <decision> <why> <evidence> <result>
 set -euo pipefail

@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/automations/benny/README.md -->
 # benny
 
 benny gives you two automations for slack issue reports. they run as claude code routines or codex app automations. one triages each report. the other reproduces confirmed bugs and may prepare a small draft fix.

@@ -1,4 +1,5 @@
 ---
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/sharpen/SKILL.md
 name: sharpen
 description: "Make a task deeper, not bigger, then rewrite the prompt. Use for /sharpen."
 disable-model-invocation: true

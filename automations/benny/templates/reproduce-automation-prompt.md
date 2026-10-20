@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/automations/benny/templates/reproduce-automation-prompt.md -->
 # Reproduce automation prompt
 
 > Source material for the copied setup workflow. Paraphrase this intent into a routine or automation draft after you confirm that the copied pack is committed in the repository where the automation will run.

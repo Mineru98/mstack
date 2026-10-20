@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/automations/benny/FOR_AGENTS.md -->
 # benny automation intent
 
 ## what i want to automate

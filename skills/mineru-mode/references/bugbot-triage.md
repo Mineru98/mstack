@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/references/bugbot-triage.md -->
 # Review bot triage
 
 Use this reference when the Babysit playbook (`../playbooks/babysit.md`) handles review bot or review-automation comments. The goal is not to ignore the review bot by default. The goal is to stop treating every comment as a required code change.

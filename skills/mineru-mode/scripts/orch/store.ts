@@ -1,3 +1,4 @@
+// upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/scripts/orch/store.ts
 import { execFileSync } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import type { Dirent } from "node:fs";

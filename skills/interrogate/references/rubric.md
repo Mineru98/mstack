@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/interrogate/references/rubric.md -->
 # Review Rubric
 
 Review through whichever lenses are relevant. Not every lens applies to every change.

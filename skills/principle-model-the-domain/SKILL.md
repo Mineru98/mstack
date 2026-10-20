@@ -1,4 +1,5 @@
 ---
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/principle-model-the-domain/SKILL.md
 name: principle-model-the-domain
 description: "Apply when writing stateful logic, or when code branches a lot or repeats a shape assumption across files."
 disable-model-invocation: true

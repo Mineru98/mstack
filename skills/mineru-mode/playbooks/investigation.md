@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/playbooks/investigation.md -->
 ### Investigation
 
 **You own the answer. Plan, route, write.**

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/scripts/check-plan.mjs
 import fs from "node:fs";
 import process from "node:process";
 

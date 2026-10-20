@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/playbooks/autonomous-run.md -->
 ### Autonomous run
 
 **You own the exit condition. Define done, then drive to it without stopping.**

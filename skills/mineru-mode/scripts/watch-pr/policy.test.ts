@@ -1,3 +1,4 @@
+// upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/scripts/watch-pr/policy.test.ts
 import { describe, expect, it } from "bun:test";
 import { WatcherQueryError } from "./github.ts";
 import {

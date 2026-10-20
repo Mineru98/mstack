@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/why/references/synthesizer-prompt.md -->
 # Synthesizer Prompt Template
 
 Fill in the placeholders.

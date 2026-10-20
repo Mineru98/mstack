@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/playbooks/trace-forensics.md -->
 ### Trace forensics
 
 **You own the diagnosis from the artifact.**

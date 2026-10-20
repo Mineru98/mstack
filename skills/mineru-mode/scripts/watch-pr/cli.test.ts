@@ -1,3 +1,4 @@
+// upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/scripts/watch-pr/cli.test.ts
 import { describe, expect, it } from "bun:test";
 import { type CliRuntime, main, parseArgs } from "./cli.ts";
 import { fakeReader, passingCheck } from "./fakes.test-helper.ts";

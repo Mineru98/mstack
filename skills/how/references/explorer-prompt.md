@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/how/references/explorer-prompt.md -->
 # Explorer Prompt Template
 
 Build each explorer subagent's prompt from this template. Fill in the placeholders.

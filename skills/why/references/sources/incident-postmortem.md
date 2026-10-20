@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/why/references/sources/incident-postmortem.md -->
 # Incident & Postmortem Context
 
 - **Linear**: look for tickets labeled `incident`, `sev-*`, `postmortem-action-item`, `reliability`

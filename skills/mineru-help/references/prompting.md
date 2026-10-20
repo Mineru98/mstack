@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-help/references/prompting.md -->
 # Word the prompt
 
 A prompt states the intent and the check for done. The playbook supplies the steps, so a few plain sentences beat a spec.

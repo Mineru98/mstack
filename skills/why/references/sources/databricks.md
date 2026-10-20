@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/why/references/sources/databricks.md -->
 # Databricks Analytics & System Tables
 
 ## What this source contains

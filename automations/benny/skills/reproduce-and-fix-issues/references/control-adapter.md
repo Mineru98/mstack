@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/automations/benny/skills/reproduce-and-fix-issues/references/control-adapter.md -->
 # Control-adapter contract
 
 Benny does not know how to start or drive every app. The user must configure one control skill or adapter that implements this contract for the target app.

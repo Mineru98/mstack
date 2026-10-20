@@ -1,4 +1,5 @@
 ---
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/typescript-best-practices/SKILL.md
 name: typescript-best-practices
 description: TypeScript best practices. Use when reading or editing any .ts or .tsx file.
 paths: ["**/*.ts", "**/*.tsx"]

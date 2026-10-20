@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/why/references/sources/sentry.md -->
 # Sentry Error History
 
 ## How to search it

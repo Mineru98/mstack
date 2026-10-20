@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/automations/benny/skills/triage-issue-reports/references/routing.example.md -->
 # Routing map example
 
 Copy this file outside `.mstack/automations/benny/`, for example to `.mstack/benny/routing.md`, and replace every placeholder. Point `routing.map_path` at the copy. Pack refreshes must not overwrite it.

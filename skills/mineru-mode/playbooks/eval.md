@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/playbooks/eval.md -->
 ### Eval
 
 **You own the experiment design. Plan, blind, run, synthesize.**

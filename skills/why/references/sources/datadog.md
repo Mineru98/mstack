@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/why/references/sources/datadog.md -->
 # Datadog Telemetry
 
 ## What this source contains

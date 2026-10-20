@@ -1,4 +1,5 @@
 ---
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/principle-redesign-from-first-principles/SKILL.md
 name: principle-redesign-from-first-principles
 description: "Apply when integrating a new requirement into an existing design."
 disable-model-invocation: true

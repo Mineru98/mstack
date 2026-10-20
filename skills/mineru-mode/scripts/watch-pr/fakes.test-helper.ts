@@ -1,3 +1,4 @@
+// upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/scripts/watch-pr/fakes.test-helper.ts
 import type {
   Check,
   ChecksFastPath,

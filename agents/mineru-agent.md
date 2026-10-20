@@ -1,4 +1,5 @@
 ---
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/agents/poteto-agent.md
 name: mineru-agent
 description: Delegate subagent for code-writing and helper tasks spawned during a `/mineru-mode` run. Use for delegates, not as the runner for `/mineru-mode` itself. Spawn a fresh `mineru-agent` for each new task, and reuse one (a new agent with the earlier result pasted in, or `send_input` in Codex) only in the strict cases that mineru-mode's Subagents section names. Reads the `mineru-mode` skill's `SKILL.md` in full before any work, including its inline Principles index. Substituting `general-purpose` skips that read and drifts.
 background: true

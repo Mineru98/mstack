@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/poteto-mode/scripts/worktree-audit.sh
 # Read-only worktree prune audit. Classifies every git worktree by size, merge
 # state, uncommitted work, remote/PR state, and the most recent chat that
 # operated in it. Emits a table sorted by size with a suggested bucket. Never

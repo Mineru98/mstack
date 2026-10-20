@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/interrogate/references/reviewer-prompt.md -->
 # Reviewer Prompt Template
 
 Build each reviewer subagent's prompt from this template, filling in the placeholders.

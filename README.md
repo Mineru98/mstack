@@ -1,6 +1,7 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/README.md -->
 # mstack
 
-mstack is a set of rigorous agent workflows for claude code and codex, built around [mineru](https://x.com/mineru)'s way of working: write less code, at higher quality.
+mstack is a set of rigorous agent workflows for claude code and codex, built around [mineru](https://github.com/Mineru98)'s way of working: write less code, at higher quality.
 
 there's a growing sense that ai writes too much slop code. i agree. i don't want to ship like a team of twenty slop artists. throughput without quality is not a goal i aspire to. if you want to go fast, go deep first. 
 

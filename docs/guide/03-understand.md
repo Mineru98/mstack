@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/docs/guide/03-understand.md -->
 # Understand the code before changing it
 
 Editing code you don't understand is how subtle regressions ship, and that's as true for the agent as for you. Agents usually fail in one of two ways. They misread what you want, or they don't have the context to do the work right. [What goes in a prompt](./02-mineru-mode.md#what-goes-in-a-prompt) handles the first. This page handles the second.

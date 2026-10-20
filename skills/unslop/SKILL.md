@@ -1,4 +1,5 @@
 ---
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md
 name: unslop
 description: Cut AI tells from any writing.
 disable-model-invocation: true

@@ -1,4 +1,5 @@
 ---
+# upstream: https://github.com/cursor/plugins/blob/main/pstack/skills/setup-pstack/SKILL.md
 name: setup-mstack
 description: Configure which models mstack uses per role and at what reasoning budget. Detects your available models and writes an always-loaded rule that overrides the skill defaults, in Claude Code or Codex. Use for /setup-mstack, "configure mstack models", "mstack budget", or changing mstack's model choices.
 ---

@@ -1,3 +1,4 @@
+<!-- upstream: https://github.com/cursor/plugins/blob/main/pstack/automations/benny/skills/reproduce-and-fix-issues/references/verify-existing-fix.md -->
 # Verify an existing fix
 
 Use this mode when an open pull request or merged commit plausibly fixes the report.
