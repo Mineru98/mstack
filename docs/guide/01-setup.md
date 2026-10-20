@@ -1,0 +1,73 @@
+# Set up mstack
+
+In this page you install the plugin, pick which models mstack uses, and run your first task. Setup is one command plus a short conversation.
+
+## Install the plugin
+
+In Claude Code, run:
+
+```text
+/plugin marketplace add Mineru98/mstack
+/plugin install mstack@ax
+```
+
+Claude Code prefixes plugin commands, so each command in this guide takes a `mstack:` prefix there, such as `/mstack:setup-mstack`, which writes its model rule to `~/.claude/rules/mstack-models.md`. The [Claude Code reference](../harness/claude-code.md) covers the other differences.
+
+In Codex, run:
+
+```text
+codex plugin marketplace add Mineru98/mstack
+```
+
+Then install `mstack` from the plugin directory (`/plugins`). Codex invokes skills as `$<skill>` or from the `/skills` picker, so read each `/name` in this guide as `$name` there. `$setup-mstack` writes its model rule to a marked block in `~/.codex/AGENTS.md`. The [Codex reference](../harness/codex.md) covers the other differences.
+
+## Pick your models
+
+Run:
+
+```text
+/setup-mstack
+```
+
+[`/setup-mstack`](../../skills/setup-mstack/SKILL.md) detects the models you have access to, asks for a reasoning budget, shows you each role (code delegates, judgment, the review panels), and asks what you want. Answer the questions. It writes a small rule every mstack skill reads: `~/.claude/rules/mstack-models.md` in Claude Code, a marked block in `~/.codex/AGENTS.md` in Codex.
+
+The defaults run at `xhigh` reasoning, the same as the `large` budget. `unlimited` lifts each model to its highest tier, up to `max`. A model that tops out lower stays at its own top tier. `medium` and `small` lower the reasoning and spend fewer tokens.
+
+You only override what you care about. A role with no line in the rule keeps the skill's default. To restore a default, delete that role's line. A rerun of `/setup-mstack` keeps any role whose model differs from the default. When a default changes, a rule written before the change still pins the old default, so delete those role lines, or delete the file, then run `/setup-mstack` again.
+
+You might be wondering what happens if you use Auto. Set a role to `inherit-parent` or `auto` and mstack omits the subagent `model` field, so the subagent inherits your parent session model. Both values mean the same thing, and neither is a model slug. For a panel role the value is a list, and one subagent runs per entry, so the list length sets the panel size. Setup also configures `swarm workers`, the default model for every `/swarm` worker unless a race names a model for each arm.
+
+## Accept the verification offers, or don't
+
+At the end of setup, `/setup-mstack` looks for a way to prove app behavior in your project, either a `verify-*` skill or an existing harness. If it finds neither, it offers once to generate one with [`/create-verification-skill`](../../skills/create-verification-skill/SKILL.md).
+
+Say yes and it writes `.claude/skills/verify-<app>/` (`.agents/skills/verify-<app>/` in Codex), a project-local skill that teaches agents to drive your app the way a user does. It proves the skill works once before handing it over. Say no and setup moves on. You can run `/create-verification-skill` yourself any time. [Verify and ship](./06-verify-and-ship.md#create-a-project-verification-skill) covers it in depth.
+
+If you're new to mstack, say yes. An agent that can check its own work keeps going until the check passes. An agent that can't hands every result back to you to check by hand. Of everything in this guide, the verification skill pays off the most.
+
+Then setup offers once to generate a formal verification skill with [`/create-formal-verification-skill`](../../skills/create-formal-verification-skill/SKILL.md), unless the project already has one. Tests check the cases someone thought to write. A formal verification skill checks one key property of your code, such as "a job never runs twice at once", in every case within a stated scope. Say yes when your code has concurrency, retries, a state machine, or a parser, where a bug is costly and tests rarely reach the case that breaks. Otherwise say no, and run it later if that changes. [Verify and ship](./06-verify-and-ship.md#prove-a-property-with-a-formal-verification-skill) covers it.
+
+After setup, start a new chat. The model rule applies to new sessions.
+
+## Keep the cost in check
+
+mstack spends extra tokens on subagents and review panels. That's the price of the rigor. To spend fewer:
+
+- Rerun `/setup-mstack` and pick a smaller reasoning budget or cheaper models. A strong model in the main chat with cheaper, faster models in the code roles is a good split.
+- Set a role to `auto` or `inherit-parent` so it runs on the chat's own model.
+- Shorten a panel list. Each entry runs one subagent.
+- Save `/mineru-mode` for work that needs rigor. A small, obvious edit doesn't.
+
+## Run your first task
+
+Pick something real but small, and describe it the way you'd describe it to a colleague:
+
+```text
+/mineru-mode add a --json flag to this command. text output stays byte-identical. verify both.
+```
+
+Watch the todo list. Its first items are the matched playbook's steps copied in, the Feature playbook for this prompt. If `/mineru-mode` skips a step, the step stays in the list with `skip: <reason>`, so you can see what it chose not to do.
+
+From here you can type normal follow-ups. Neither Claude Code nor Codex has a sticky mode. To keep `/mineru-mode` on, re-invoke it (`/mstack:mineru-mode` in Claude Code, `$mineru-mode` in Codex) at each new task, or put a line in `CLAUDE.md` (Claude Code) or `AGENTS.md` (Codex) that says to use it. The skill attaches to one message and fades as the session moves on.
+
+Next: [Route work through `/mineru-mode`](./02-mineru-mode.md).
