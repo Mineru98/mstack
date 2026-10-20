@@ -18,6 +18,11 @@ mstack은 claude code와 codex에서 쓰는 엄격한 에이전트 워크플로 
 claude code:
 
 ```bash
+claude plugin marketplace add Mineru98/mstack
+claude plugin install mstack@ax
+```
+
+```bash
 /plugin marketplace add Mineru98/mstack
 /plugin install mstack@ax
 ```
