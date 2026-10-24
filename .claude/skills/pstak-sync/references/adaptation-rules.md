@@ -39,7 +39,7 @@ upstream pstack은 Cursor 전용 표현으로 쓰여 있고, mstack은 같은 �
 | --- | --- |
 | `~/.cursor/rules/pstack-models.mdc` | the `mstack-models` rule (`~/.claude/rules/mstack-models.md` in Claude Code, the marked block in `~/.codex/AGENTS.md` in Codex) |
 | "always-applied rule" | "always-loaded rule" |
-| 코드용 기본 모델 `grok-4.7-xhigh-fast` | `inherit-parent` |
+| 코드용 기본 모델 `claude-sonnet-5-5-high` | `inherit-parent` |
 | 글/판단용 기본 모델 `claude-opus-5-5-xhigh` 같은 전체 슬러그 | `opus xhigh` 형식 (`<model> <effort>`) |
 | "If the Task tool rejects a slug" | "If the subagent tool rejects a slug" |
 
