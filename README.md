@@ -33,9 +33,10 @@ codex:
 
 ```bash
 codex plugin marketplace add Mineru98/mstack
+codex plugin add mstack@ax
 ```
 
-그다음 플러그인 디렉터리(`/plugins`)에서 `mstack`을 설치합니다.
+설치한 뒤에는 `codex plugin list`에서 `mstack@ax`가 `installed, enabled`로 나오는지 확인합니다. 이미 켜져 있는 codex 세션은 재시작해야 플러그인이 보입니다. 플러그인 디렉터리(`/plugins`)에서 골라 설치해도 됩니다.
 
 claude code는 플러그인 명령과 에이전트 앞에 플러그인 이름을 붙이므로 `/mineru-mode`는 `/mstack:mineru-mode`가 됩니다. codex에서는 `$mineru-mode`나 `/skills` 선택기로 스킬을 호출합니다. 스킬 문서에는 두 하네스를 함께 다루는 표현이 있는데, 각각 어떻게 읽어야 하는지는 [claude code 참고 문서](./docs/harness/claude-code.md)와 [codex 참고 문서](./docs/harness/codex.md)에 적혀 있습니다. claude code에서 `/mstack:setup-mstack`을 실행하면 모델 선택이 `~/.claude/rules/mstack-models.md`에 저장됩니다. codex에서는 `$setup-mstack`이 `~/.codex/AGENTS.md`의 표시된 블록에 저장합니다. 하네스가 지원하지 않는 기능이 필요한 단계는 한 줄 안내만 남기고 건너뜁니다.
 
