@@ -27,6 +27,8 @@ claude plugin install mstack@ax
 /plugin install mstack@ax
 ```
 
+claude code는 서드파티 마켓플레이스의 자동 업데이트를 꺼 두므로 mstack은 설치한 버전에 머뭅니다. 켜려면 `/plugin`을 실행해 **marketplaces** 탭에서 `ax`를 선택하고 **enable auto-update**를 고릅니다. 한 번만 직접 업데이트하려면 `claude plugin update mstack@ax`를 실행합니다.
+
 codex:
 
 ```bash
@@ -90,7 +92,7 @@ claude code는 플러그인 명령과 에이전트 앞에 플러그인 이름을
 | [autonomous run](./skills/mineru-mode/playbooks/autonomous-run.md) | 오래 걸리는 작업을 멈추지 않고 끝까지 진행합니다. |
 | [orchestrate](./skills/mineru-mode/playbooks/orchestrate.md) | 조율 담당 채팅 하나에 맡기는 장기 프로젝트. 며칠에 걸치고, 스택된 PR이 많고, 서브에이전트 여러 대가 동원됩니다. |
 | [autopilot-full](./skills/mineru-mode/playbooks/autopilot-full.md) | 서로 독립적인 PR들을 PR마다 담당자 한 명씩 두고 머지까지 진행합니다. 스웜(swarm)이 코드가 준비된 각 head를 검증하고, 패치를 다시 바꾸면 새로 검사합니다. |
-| [autopilot-stack](./skills/mineru-mode/playbooks/autopilot-stack.md) | 선형 base-branch 스택 하나를 만들고 검증해서, 운영자가 검토하고 머지할 수 있게 넘깁니다. |
+| [autopilot-stack](./skills/mineru-mode/playbooks/autopilot-stack.md) | Autopilot-full에서 머지만 뺀 것. PR을 만들고 검증해서 운영자가 검토하고 머지할 수 있게 넘기며, PR은 그 PR이 기반으로 삼는 PR 위에만 쌓습니다. |
 | [session pickup](./skills/mineru-mode/playbooks/session-pickup.md) | 이전 에이전트가 하던 작업을 이어받거나 인수합니다. |
 | [pause safely](./skills/mineru-mode/playbooks/pause-safely.md) | 진행 중인 작업을 깔끔하게 멈춰서 나중에 다시 시작할 수 있게 합니다. |
 | [multi-phase plan](./skills/mineru-mode/playbooks/multi-phase-plan.md) | 여러 단계나 스택된 PR에 걸치는 작업. |
@@ -136,11 +138,12 @@ claude code와 codex 모두 모드를 유지하는 기능은 없습니다. [`/mi
 | [`/why`](./skills/why/SKILL.md) | 무언가가 왜 이렇게 만들어졌는지 알고 싶을 때. 실행 시점에 사용 가능한 MCP를 찾아, 증거 범주별로(소스 관리, 이슈 트래커, 장문 문서, 실시간 채팅, 인프라 관측, 에러 추적, 분석 웨어하우스) 병렬로 조회합니다. |
 | [`/recall`](./skills/recall/SKILL.md) | 작업을 시작하거나 재개하면서 어떤 주제에 대한 최근 맥락을 되살리고 싶을 때. 내 채팅 기록과 공유 기록에서 복원해 간결한 현재 상태 브리핑으로 돌려줍니다. |
 | [`/ketchup`](./skills/ketchup/SKILL.md) | 내 마지막 메시지 이후 이 채팅에서 바뀐 내용을 쉬운 말과 작은 그림으로 보고 싶을 때. 내 결정을 기다리는 항목은 모두 나열되며, 답장만 읽고도 결정할 수 있습니다. 답장이 길어져도 그렇게 합니다. |
+| [`/ketchup-video`](./skills/ketchup-video/SKILL.md) | `/ketchup` 따라잡기를 자막이 붙은 짧은 슬라이드 영상으로 받고 싶을 때. 내 결정을 기다리는 항목은 영상 아래에 글로 붙습니다. |
 | [`/blast-radius`](./skills/blast-radius/SKILL.md) | 작아 보이는 변경이 그 밖에 무엇을 깨뜨릴 수 있는지 알고 싶을 때. 안전하다고 주장하는 대신, 그렇게 말할 수 있는 근거 하나를 코드를 실행해서 증명합니다. |
 | [`/architect`](./skills/architect/SKILL.md) | 함수 경계를 넘나드는 코드를 쓰기 전에, 호출하는 쪽의 사용 방식, 타입, 모듈 구조부터 정하고 싶을 때. |
 | [`/arena`](./skills/arena/SKILL.md) | 같은 일을 N개의 병렬 시도로 해 보고, 각 시도의 좋은 부분만 골라 쓰고 싶을 때. |
 | [`/swarm`](./skills/swarm/SKILL.md) | 서로 다른 조각이나 경쟁 조건을 N개의 병렬 워커에게 나눠 맡기고, 보고서 하나로 취합하고 싶을 때. |
-| [`/interrogate`](./skills/interrogate/SKILL.md) | diff가 있고, 서로 다른 모델이 그것을 깨뜨려 보게 하고 싶을 때. 엄격한 코드 품질 관점도 포함합니다. |
+| [`/interrogate`](./skills/interrogate/SKILL.md) | diff가 있고, 서로 다른 모델이 그것을 깨뜨려 보게 하고 싶을 때. 실행으로 증명된 발견만 남깁니다. |
 | [`/automate-me`](./skills/automate-me/SKILL.md) | 내가 실제로 일해 온 방식을 바탕으로 나만의 `-mode` 스킬 초안을 받고 싶을 때. |
 | [`/make-bot-ui`](./skills/make-bot-ui/SKILL.md) | 버튼을 누르면 webhook으로 시작되는 자동화가 깨어나는 페이지나 대시보드를 만들고 싶을 때. 발신자 키 전달과 Tailscale 설정도 다룹니다. |
 | [`/setup-mstack`](./skills/setup-mstack/SKILL.md) | mstack이 역할별로 쓸 모델을 고르고 싶을 때. 쓸 수 있는 모델을 찾아 설정 규칙으로 저장합니다. |
@@ -157,6 +160,7 @@ claude code와 codex 모두 모드를 유지하는 기능은 없습니다. [`/mi
 | [`/maintain-verification-skill`](./skills/maintain-verification-skill/SKILL.md) | verify 스킬의 기능 맵이 앱과 어긋났을 때. 소스를 한 번 훑고 실제 앱에서 한 번 확인한 뒤, 증명된 수정만 담아 PR을 최대 한 개 올립니다. |
 | [`/create-formal-verification-skill`](./skills/create-formal-verification-skill/SKILL.md) | 경쟁 조건, 재시도, 상태 머신, 파서, unsafe 코드가 깨지는 경우를 테스트가 잡지 못할 때. 상황에 맞는 도구로 속성 하나를 검증하고, 변경할 때마다 다시 확인하는 프로젝트 전용 스킬을 만듭니다. |
 | [`/maintain-formal-verification-skill`](./skills/maintain-formal-verification-skill/SKILL.md) | 형식 검증이 다루는 코드가 마지막 검증 이후 바뀌었을 때. 모델, 하네스, 속성을 코드에 맞게 고치고 다시 돌립니다. 실패마다 검증이 어긋난 것인지 코드의 버그인지도 알려 줍니다. |
+| [`/statechart`](./skills/statechart/SKILL.md) | 행동을 소유한 사람이 명세를 읽는 대신 눈으로 봐야 할 때. tla+ 모델을 검사해 사용자가 보는 것을 mermaid 상태 차트로 그리고, 규칙을 깨는 상태마다 표시하고 그 상태까지의 가장 짧은 경로를 알려 줍니다. |
 | [`/unslop`](./skills/unslop/SKILL.md) | 글을 다듬을 때. AI 티가 나는 표현을 없앱니다. |
 | [`/bro`](./skills/bro/SKILL.md) | 마지막 메시지를 전문 용어 없이 쉬운 말로 다시 듣고 싶을 때. |
 | [`/technical-writing`](./skills/technical-writing/SKILL.md) | 문서, RFC, readme, PR 설명, 커밋 메시지를 쓸 때 쓰는 계층형 문서 기준(Diátaxis + Google developer style + STE + Global English). |
@@ -616,26 +620,25 @@ flowchart TD
 </details>
 
 <details>
-<summary><code>/interrogate</code> · 여러 모델이 diff를 적대적으로 리뷰</summary>
+<summary><code>/interrogate</code> · 적대자가 diff를 깨뜨려 보고 실행으로 증명된 발견만 남김</summary>
 
 ```mermaid
 sequenceDiagram
     actor U as 사용자
-    participant L as 리드 리뷰어
-    participant A as Reviewer A
-    participant B as Reviewer B
+    participant L as 리드
+    participant A as 적대자 A
+    participant B as 적대자 B
 
     U->>L: 리뷰 요청
-    L->>L: 범위 확정 (지정한 파일 또는 git diff main...HEAD)
-    L->>L: 의도를 한 문단으로 진술 (불확실하면 사용자에게 질문)
-    Note over A,B: 모델 목록 길이만큼 리뷰어가 생기고 기본은 opus xhigh와 inherit-parent
-    L->>A: 의도, diff, 루브릭, 코드 품질 관점 (파일 수정 금지)
-    L->>B: 같은 템플릿, 다른 모델
-    A-->>L: 발견 목록
-    B-->>L: 발견 목록
-    L->>L: 같은 이슈를 병합하고 둘 이상이 독립적으로 지적한 항목에 가중
-    L->>L: Act on / Consider / Noted / Dismissed 네 칸으로 판정
-    L-->>U: Intent, Reviewers, 네 칸, Agreement Map (자동 적용 없음)
+    L->>L: 범위 확정 (지정한 범위, 없으면 머지 베이스부터 작업 트리까지의 브랜치 diff)
+    L->>L: in-your-own-words로 의도를 진술 (불확실하면 사용자에게 질문)
+    Note over A,B: 모델 목록 길이만큼 적대자가 생기고 기본은 opus xhigh와 inherit-parent. 각자 worktree를 받고 커밋되지 않은 변경도 복사됨
+    L->>A: 범위, 의도, "깨뜨려 보라"는 브리프
+    L->>B: 같은 브리프, 다른 모델
+    A-->>L: 실행으로 증명한 발견 (제목, 명령, 출력, 의도가 요구하는 출력)
+    B-->>L: 실행으로 증명한 발견
+    L->>L: 각 발견의 명령을 다시 실행해 검증, 의도를 깨는 것만 유지, 같은 원인은 병합
+    L-->>U: Intent, Findings, Dropped (자동 적용 없음)
 ```
 
 </details>
@@ -1342,18 +1345,20 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    S1["1. Frame<br/>셀 수 있는 완료 조건, 규모, 예산<br/>에이전트 하나로 끝나면 Autonomous run으로"] --> S2["2. 런타임 설치<br/>orch init, 상시 지침 preferences.md, frontier.json 시드"]
-    S2 --> S3["3. 파일럿<br/>단위 하나로 브리프, 워커, 검증, 스택, 머지까지 전체 경로를 통과"]
-    S3 --> S4["4. Scale<br/>동시 실행 상한까지 롤링 윈도로 워커 생성"]
-    subgraph LOOP["프로그램 루프"]
-        S4 --> S5["5. Drain<br/>inbox를 비우고 완료 항목을 landed / needs-verify / failed / zombie / noise로 분류"]
-        S5 --> S6["6. Land<br/>검증된 단위부터 지속적으로 착륙<br/>스태커 한 명만 토폴로지 변경"]
-        S6 --> SV["검증 원장 갱신<br/>PR 번호와 head SHA 단위"]
-        SV --> RD{"준비된 일이 남았는가"}
-        RD -->|"예"| S4
+    A["코디네이터가 프로그램을 운영<br/>코드는 직접 쓰지 않고 작업을 맡기고 결과를 확인<br/>에이전트 하나로 끝나면 Autonomous run으로"] --> B["킥오프 작성<br/>완료를 증명할 증거, 쓸 수 있는 경로와 금지 행동을 명시"]
+    B --> C["첫 단위 하나로 시작<br/>킥오프, PR 담당자, 작성자가 아닌 검증자, 머지까지 통과시킨 뒤 확장"]
+    C --> D["독립 작업마다 새 워커 생성<br/>영역에 병렬 워커가 많을 때만 하위 코디네이터 (3단계까지, 코디네이터당 약 10개)"]
+    subgraph LOOP["감독 루프"]
+        D --> E["diff나 산출물을 직접 읽고<br/>PR의 라이브 상태를 gh로 확인"]
+        E --> F{"범위를 벗어났거나 멈췄는가"}
+        F -->|"예"| G["돌려보내거나 교체<br/>원인별 재시도, 두 번 실패하면 단위를 버리고 재계획"]
+        G --> D
+        F -->|"아니오"| H["검증자가 현재 head에서 통과시키면 담당자가 머지"]
+        H --> RD{"남은 일이 있는가"}
+        RD -->|"예"| D
     end
-    RD -->|"아니오"| S7["7. Close<br/>모든 에이전트를 종료 상태로 정리, 실제 산출물에서 조건 확인, 기록 감사"]
-    S5 -.->|"사람이 필요한 결정"| GT["gates.md에 보류하고 나머지 작업은 우회해 진행"]
+    RD -->|"아니오"| R["보고<br/>목표 대비 착륙 내용, PR별 라이브 상태와 판정, 버린 것, 사용자 결정 대기 항목"]
+    E -.->|"되돌릴 수 없는 행동, 실험으로 못 정하는 제품 결정"| GT["사용자에게 질문"]
 ```
 
 </details>
@@ -1375,7 +1380,7 @@ sequenceDiagram
     O->>O: 실제 산출물로 자기 증명, babysit
     R->>W: code-ready SHA에서 독립 검증자를 병렬 실행 (gates, 라이브 구동, diff 감사)
     W-->>R: 레인별 PASS 또는 발견
-    R->>O: 증명된 발견을 한 번의 fix-forward로 전달 (루트는 직접 푸시하지 않음)
+    R->>O: 막는 문제(실패하는 실행, 틀린 문서 줄)만 전달하고 나머지는 후속 작업으로 보류
     O-->>R: 새 head 보고, merge-ready
     R->>R: 영수증 감사, 게이트를 느슨하게 하는 변경은 새 countersign
     R->>O: 검증된 head를 확인
@@ -1388,16 +1393,16 @@ sequenceDiagram
 </details>
 
 <details>
-<summary>Autopilot-stack · 선형 스택 하나를 만들고 운영자가 착륙</summary>
+<summary>Autopilot-stack · 머지만 뺀 Autopilot-full, 운영자가 착륙</summary>
 
 ```mermaid
 flowchart TD
-    A["운영자가 착륙 전에 리뷰하길 원함<br/>작업이 순서가 있거나 맞물림"] --> B["1. Autopilot-full의 담당자 실행<br/>merge-ready 대신 STACK-READY 보고<br/>rebase, retarget, 머지, auto-merge 금지"]
-    B --> C["2. 토폴로지의 작성자는 루트 하나<br/>의존 순서대로 PR을 붙이고 base를 부모 브랜치로"]
-    C --> D["3. 착륙 전까지 루트가 drift를 흡수<br/>링크마다 필요하면 아래부터 rebase, patch-id 규칙 적용"]
-    D --> E["4. 체인을 운영자에게 전달<br/>링크마다 판정을 PR에 담음"]
-    E --> F["착륙이 시작되면 아무도 체인에 쓰지 않음<br/>착륙 후 retarget만 허용"]
-    F --> G["운영자가 아래부터 착륙"]
+    A["운영자가 착륙 전에 리뷰하길 원함"] --> B["1. Autopilot-full의 담당자 실행<br/>5단계 머지 대신 head마다 검증되고 green이면 멈춤"]
+    B --> C["2. PR은 기반으로 삼는 PR 위에만 쌓음<br/>나머지는 trunk에서 병렬 분기"]
+    C --> D["아래 PR에 새 head가 생기면 위 PR을 restack<br/>patch-id가 그대로면 판정 유지"]
+    D --> E["운영자에게 전달<br/>PR마다 판정을 보고"]
+    E --> F["넘긴 뒤에는 운영자의 go 없이 아무도 푸시하지 않음"]
+    F --> G["운영자가 착륙"]
 ```
 
 </details>
