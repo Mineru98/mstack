@@ -1,9 +1,9 @@
 ---
-name: pstak-sync
-description: "upstream(cursor/plugins의 pstack)에서 마지막 동기화 이후 바뀐 파일을 가져와 mstack에 맞게 이식한다. 개명, 3-way 병합, Cursor 전용 표현의 중립화, lint 검증, 기준선 갱신까지 한 번에 진행한다. 'pstack 동기화', 'upstream 반영', 'pstack 최신화', 'pstak-sync', 'sync pstack' 같은 요청에 쓴다."
+name: pstack-sync
+description: "upstream(cursor/plugins의 pstack)에서 마지막 동기화 이후 바뀐 파일을 가져와 mstack에 맞게 이식한다. 개명, 3-way 병합, Cursor 전용 표현의 중립화, lint 검증, 기준선 갱신까지 한 번에 진행한다. 'pstack 동기화', 'upstream 반영', 'pstack 최신화', 'pstack-sync', 'sync pstack' 같은 요청에 쓴다."
 ---
 
-# pstak-sync
+# pstack-sync
 
 upstream pstack의 최근 변경을 mstack에 안전하게 이식하는 유지보수용 스킬입니다. 플러그인 배포물이 아니라 이 저장소의 `.claude/skills`에서만 동작합니다.
 
@@ -26,7 +26,7 @@ mstack은 pstack을 개명만 한 포크가 아닙니다. upstream은 Cursor 전
 
 ## 절차
 
-아래에서 `SYNC`는 `node .claude/skills/pstak-sync/scripts/pstack-sync.mjs`를 뜻합니다.
+아래에서 `SYNC`는 `node .claude/skills/pstack-sync/scripts/pstack-sync.mjs`를 뜻합니다.
 
 ### 1. 현황 확인
 
