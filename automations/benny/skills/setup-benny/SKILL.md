@@ -56,7 +56,6 @@ Preserve every unrelated setting and every other plugin entry. If the mstack ent
 
 Reload the target project or start a fresh agent rooted there. Verify that these shared mstack skills resolve from project scope:
 
-- `how`
 - `why`
 - `tdd`
 - `unslop`

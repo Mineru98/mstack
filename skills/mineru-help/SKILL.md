@@ -46,11 +46,11 @@ If cost is the worry, say where the tokens go and how to spend fewer. mstack spe
 
 mstack runs in Claude Code and Codex. In Claude Code, each command takes a `mstack:` prefix, such as `/mstack:mineru-mode`. In Codex, invoke a skill as `$mineru-mode` or pick it from `/skills`. Where the two differ, the skills name both, such as the subagent tool (`Agent` in Claude Code, `spawn_agent` in Codex).
 
-Other tools can read the skills, because they use the Agent Skills format. But most workflow skills, including `/mineru-mode`, `/how`, `/why`, and `/teach`, spawn subagents with per-role models, so those parts may not work there.
+Other tools can read the skills, because they use the Agent Skills format. But most workflow skills, including `/mineru-mode`, `/how`, and `/teach`, spawn subagents, some with per-role models, so those parts may not work there.
 
 ## Start a task with `/mineru-mode`
 
-`/mineru-mode` matches the task to a playbook, copies the playbook's steps into the todo list, and runs the other skills as the steps need them. A step it skips stays in the list as `skip: <reason>`. A good prompt states the goal and how to tell it's done. It doesn't list skills, because a hand-written sequence tends to drop or reorder steps the playbook would keep. Read [`references/prompting.md`](references/prompting.md) before you help word one. [Guide page 2](../../docs/guide/02-mineru-mode.md) has examples.
+`/mineru-mode` matches the task to a playbook, copies the playbook's steps into the todo list, and runs the other skills as the steps need them. A good prompt states the goal and how to tell it's done. It doesn't list skills, because a hand-written sequence tends to drop or reorder steps the playbook would keep. Read [`references/prompting.md`](references/prompting.md) before you help word one. [Guide page 2](../../docs/guide/02-mineru-mode.md) has examples.
 
 Whether `/mineru-mode` stays on depends on how the user starts it:
 
@@ -106,16 +106,15 @@ Close calls:
 
 - `/how` explains what the code does. `/why` explains the reasons. `/teach` runs one or both and explains the result plainly.
 - `/arena` gives every worker the same brief and merges the best parts. `/swarm` splits work into slices or a race and returns one report.
-- `/architect` implements right after it settles the design. Add "with checkpoint" to review the design before it writes code.
 - `/interrogate` reviews the diff. `/blast-radius` looks for breakage outside the diff and proves the one fact that makes the change safe.
 - `/recall` rebuilds context across recent chats. `/ketchup` covers only this chat since the user's last message. Resuming one specific chat or branch is the Session pickup playbook.
-- `/figure-it-out` designs one rigorous run. The Orchestrate playbook runs a program that spans days and many PRs. The Autonomous run playbook drives one task to a finish condition.
+- `/figure-it-out` designs one rigorous run. The Autonomous run playbook drives one task to a finish condition.
 
 Not in mstack:
 
 - `/deslop`, `control-cli`, and `control-ui` are not shipped. For deslop, use `no-comments` and `unslop`. For driving a UI or CLI, use a skill the repo or harness provides (Claude Code: Chrome or Playwright MCP; Codex: browser or computer use).
 - `/loop` is built into Claude Code. Codex has none: use Codex app Automations or a scheduled `codex exec`. For authoring skills, use `skill-creator` (`$skill-creator` in Codex).
-- mstack has no `/orchestrate` skill. Orchestrate is a `/mineru-mode` playbook. If the slash menu shows `/orchestrate`, another plugin provides it.
+- mstack has no `/orchestrate` skill. If the slash menu shows `/orchestrate`, another plugin provides it.
 
 ## Playbooks and principles
 
@@ -128,7 +127,7 @@ Playbooks are step lists inside `/mineru-mode`, not skills, so they have no slas
 - "full autopilot on this queue" runs Autopilot-full. "autopilot, don't merge" runs Autopilot-stack.
 - "run the eval playbook" runs Eval.
 
-Without `/mineru-mode`, a phrase such as "babysit this pr" can start another plugin's skill for the same job instead. The Playbooks section of [`mineru-mode`](../mineru-mode/SKILL.md) lists every playbook and when it applies. [Guide page 6](../../docs/guide/06-verify-and-ship.md) covers opening, babysitting, and landing a PR.
+Without `/mineru-mode`, a phrase such as "babysit this pr" can start another plugin's skill for the same job instead. The Playbooks section of [`mineru-mode`](../mineru-mode/SKILL.md) lists every playbook. [Guide page 6](../../docs/guide/06-verify-and-ship.md) covers opening, babysitting, and landing a PR.
 
 mstack has no planning skill. Claude Code plan mode and Codex plan mode (`/plan`) work alongside it. For work that spans phases or stacked PRs, asking `/mineru-mode` for a plan runs the [Multi-phase plan playbook](../mineru-mode/playbooks/multi-phase-plan.md), which writes the plan and doesn't implement it. For a design question, the Prototype playbook or `/architect` settles it in code first.
 

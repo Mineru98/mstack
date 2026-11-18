@@ -32,9 +32,9 @@ Run:
 
 [`/setup-mstack`](../../skills/setup-mstack/SKILL.md) detects the models you have access to, asks for a reasoning budget, shows you each role (code delegates, judgment, the review panels), and asks what you want. Answer the questions. It writes a small rule every mstack skill reads: `~/.claude/rules/mstack-models.md` in Claude Code, a marked block in `~/.codex/AGENTS.md` in Codex.
 
-The defaults run at `xhigh` reasoning, the same as the `large` budget. `unlimited` lifts each model to its highest tier, up to `max`. A model that tops out lower stays at its own top tier. `medium` and `small` lower the reasoning and spend fewer tokens.
+The defaults are the same as the `large` budget. Code roles run on the parent model (`inherit-parent`), and prose and judgment run on `opus xhigh`. No role runs above `xhigh`. `medium` lowers each role one level and `small` lowers it two, and both spend fewer tokens.
 
-You only override what you care about. A role with no line in the rule keeps the skill's default. To restore a default, delete that role's line. A rerun of `/setup-mstack` keeps any role whose model differs from the default. When a default changes, a rule written before the change still pins the old default, so delete those role lines, or delete the file, then run `/setup-mstack` again.
+You only override what you care about. A role with no line in the rule keeps the skill's default. To restore a default, delete that role's line. A rerun of `/setup-mstack` keeps any role whose model differs from the default. When a default changes, a rule written before the change still pins the old default until you run `/setup-mstack` again. That run replaces the old defaults it recognizes, tells you which, and keeps your other choices. To drop a pin it does not recognize, delete that role's line or the file first.
 
 You might be wondering what happens if you use Auto. Set a role to `inherit-parent` or `auto` and mstack omits the subagent `model` field, so the subagent inherits your parent session model. Both values mean the same thing, and neither is a model slug. For a panel role the value is a list, and one subagent runs per entry, so the list length sets the panel size. Setup also configures `swarm workers`, the default model for every `/swarm` worker unless a race names a model for each arm.
 
@@ -67,7 +67,7 @@ Pick something real but small, and describe it the way you'd describe it to a co
 /mineru-mode add a --json flag to this command. text output stays byte-identical. verify both.
 ```
 
-Watch the todo list. Its first items are the matched playbook's steps copied in, the Feature playbook for this prompt. If `/mineru-mode` skips a step, the step stays in the list with `skip: <reason>`, so you can see what it chose not to do.
+Watch the todo list. Its first items are the matched playbook's steps copied in, the Feature playbook for this prompt.
 
 From here you can type normal follow-ups. Neither Claude Code nor Codex has a sticky mode. To keep `/mineru-mode` on, re-invoke it (`/mstack:mineru-mode` in Claude Code, `$mineru-mode` in Codex) at each new task, or put a line in `CLAUDE.md` (Claude Code) or `AGENTS.md` (Codex) that says to use it. The skill attaches to one message and fades as the session moves on.
 

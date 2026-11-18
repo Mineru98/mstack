@@ -1,8 +1,8 @@
 {
   "upstream": "cursor/plugins",
   "path": "pstack",
-  "baseSha": "4dd1d05818d19792e7cd6e818f1667f95f7e1dbe",
-  "baseDate": "2026-10-29T15:51:24-07:00",
-  "baseVersion": "0.15.36",
-  "syncedAt": "2026-10-30T05:48:39.799Z"
+  "baseSha": "93b916d4a1e806507e22f4716b352fa91f2b227e",
+  "baseDate": "2026-11-17T14:49:29-08:00",
+  "baseVersion": "0.15.43",
+  "syncedAt": "2026-11-18T07:30:33.145Z"
 }

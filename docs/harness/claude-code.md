@@ -23,6 +23,7 @@ mstack skills name each tool once as a pair, such as "the subagent tool (`Agent`
 | --- | --- |
 | general-purpose agent | `subagent_type: "general-purpose"` |
 | `mineru-agent`, `comment-sicko` | `mstack:mineru-agent`, `mstack:comment-sicko` |
+| The `model:` and `effort:` lines in `mineru-agent`'s file | They pin `opus` and `xhigh`. Omitting `model` on an `Agent` call that spawns `mstack:mineru-agent` still runs it on `opus xhigh`, not the session model. |
 | read-only agent | `subagent_type: "Explore"`. It keeps `Bash`, so the brief also says "do not edit files", and you check `git status` afterward. |
 | writing agent | `general-purpose`. It keeps the session's MCP servers. |
 | own git worktree and branch | `isolation: "worktree"`. Name the branch or commit the worker checks out. |

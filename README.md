@@ -59,7 +59,7 @@ claude code는 플러그인 명령과 에이전트 앞에 플러그인 이름을
 
 ### 그냥 [`/mineru-mode`](./skills/mineru-mode/SKILL.md)를 쓰세요
 
-이 스킬이 가장 쉬운 지름길입니다. 저는 에이전트가 엄격하게 일해야 할 때마다 이걸 씁니다. 플레이북은 스물세 개입니다.
+이 스킬이 가장 쉬운 지름길입니다. 저는 에이전트가 엄격하게 일해야 할 때마다 이걸 씁니다. 플레이북은 스물두 개입니다.
 
 ```
 /mineru-mode 이 PR에 버그가 있어요. 가만히 두어도 750ms마다 스크롤이 밀립니다. 먼저
@@ -72,7 +72,7 @@ claude code는 플러그인 명령과 에이전트 앞에 플러그인 이름을
 ```
 
 <details>
-<summary>플레이북 스물세 개</summary>
+<summary>플레이북 스물두 개</summary>
 
 | 플레이북 | 용도 |
 |---|---|
@@ -91,7 +91,6 @@ claude code는 플러그인 명령과 에이전트 앞에 플러그인 이름을
 | [babysit](./skills/mineru-mode/playbooks/babysit.md) | PR 하나 또는 스택을 머지 가능한 상태까지 끌고 갑니다. 충돌, 리뷰 스레드, CI를 처리합니다. |
 | [shipping](./skills/mineru-mode/playbooks/shipping.md) | 초록불인 스택을 독립적으로 검증한 뒤, 검증된 연속 구간을 아래부터 차례로 머지합니다. 기본은 github를 통하고, origin을 쓸 수 있으면 origin을 씁니다. |
 | [autonomous run](./skills/mineru-mode/playbooks/autonomous-run.md) | 오래 걸리는 작업을 멈추지 않고 끝까지 진행합니다. |
-| [orchestrate](./skills/mineru-mode/playbooks/orchestrate.md) | 조율 담당 채팅 하나에 맡기는 장기 프로젝트. 며칠에 걸치고, 스택된 PR이 많고, 서브에이전트 여러 대가 동원됩니다. |
 | [autopilot-full](./skills/mineru-mode/playbooks/autopilot-full.md) | 서로 독립적인 PR들을 PR마다 담당자 한 명씩 두고 머지까지 진행합니다. 스웜(swarm)이 코드가 준비된 각 head를 검증하고, 패치를 다시 바꾸면 새로 검사합니다. |
 | [autopilot-stack](./skills/mineru-mode/playbooks/autopilot-stack.md) | Autopilot-full에서 머지만 뺀 것. PR을 만들고 검증해서 운영자가 검토하고 머지할 수 있게 넘기며, PR은 그 PR이 기반으로 삼는 PR 위에만 쌓습니다. |
 | [session pickup](./skills/mineru-mode/playbooks/session-pickup.md) | 이전 에이전트가 하던 작업을 이어받거나 인수합니다. |
@@ -116,7 +115,7 @@ claude code와 codex 모두 모드를 유지하는 기능은 없습니다. [`/mi
 
 ## 스킬
 
-[`/mineru-mode`](./skills/mineru-mode/SKILL.md)는 아래 스킬 대부분을 단계가 필요로 할 때 알아서 실행합니다(`how`, `why`, `architect`, `arena`, `swarm`, `interrogate`, `unslop`, `no-comments`, `technical-writing`, `tdd`, 그리고 원칙들). 아래 표는 스킬 하나를 직접 쓰고 싶을 때 참고하세요.
+[`/mineru-mode`](./skills/mineru-mode/SKILL.md)는 아래 스킬 대부분을 단계가 필요로 할 때 알아서 실행합니다(`why`, `architect`, `arena`, `swarm`, `interrogate`, `unslop`, `no-comments`, `technical-writing`, `tdd`, 그리고 원칙들). 아래 표는 스킬 하나를 직접 쓰고 싶을 때 참고하세요.
 
 ```
 /how 실행 취소는 어떻게 동작해? 취소할 run을 하나씩 조회하면서 n+1 문제가 생기지는 않아?
@@ -134,9 +133,9 @@ claude code와 codex 모두 모드를 유지하는 기능은 없습니다. [`/mi
 | [`/mineru-mode`](./skills/mineru-mode/SKILL.md) | 간단하지 않은 모든 작업의 기본 진입점. |
 | [`/mineru-help`](./skills/mineru-help/SKILL.md) | mstack이 처음이거나, 어떤 스킬·플레이북·원칙이 맞는지 모를 때. 하려는 일을 먼저 파악하고 그 부분에 답한 뒤, 입력할 프롬프트를 건네줍니다. `/mineru-help`를 직접 입력할 때만 실행됩니다. |
 | [`/in-your-own-words`](./skills/in-your-own-words/SKILL.md) | 에이전트가 작업에 들어가기 전에 목표와 문제를 자기 말로 다시 설명해 주길 원할 때. `/in-your-own-words`를 직접 입력할 때만 실행됩니다. |
-| [`/sharpen`](./skills/sharpen/SKILL.md) | 프롬프트를 보내기 전에 더 길게가 아니라 더 깊게 만들고 싶을 때. 이 스킬은 네 가지를 짚어 줍니다. 최고 전문가라면 요청하지 않은 일까지 무엇을 하는지, 출발점으로 삼을 원재료가 무엇인지, 어떤 방법과 도구를 쓰는지, 결과가 맞는지 확인할 외부 검증이 무엇인지입니다. 다시 쓴 프롬프트를 돌려주며 선택은 사용자에게 남겨 둡니다. 작업 자체는 하지 않습니다. `/sharpen`을 직접 입력할 때만 실행됩니다. |
+| [`/sharpen`](./skills/sharpen/SKILL.md) | 프롬프트를 보내기 전에 더 길게가 아니라 더 깊게 만들고 싶을 때. 이 스킬은 네 가지를 짚어 줍니다. 최고 전문가라면 요청하지 않은 일까지 무엇을 하는지, 출발점으로 삼을 원재료가 무엇인지, 어떤 방법과 도구를 쓰는지, 결과가 맞는지 확인할 외부 검증이 무엇인지입니다. 다시 쓴 프롬프트를 돌려주는데, 실험으로 가릴 수 있는 선택은 에이전트에게 프로토타입으로 확인하라고 요청하고 제품·취향에 관한 선택은 사용자에게 남겨 둡니다. 작업 자체는 하지 않습니다. `/sharpen`을 직접 입력할 때만 실행됩니다. |
 | [`/how`](./skills/how/SKILL.md) | 어떤 서브시스템이 어떻게 동작하는지 차근차근 알고 싶을 때. |
-| [`/why`](./skills/why/SKILL.md) | 무언가가 왜 이렇게 만들어졌는지 알고 싶을 때. 실행 시점에 사용 가능한 MCP를 찾아, 증거 범주별로(소스 관리, 이슈 트래커, 장문 문서, 실시간 채팅, 인프라 관측, 에러 추적, 분석 웨어하우스) 병렬로 조회합니다. |
+| [`/why`](./skills/why/SKILL.md) | 무언가가 왜 이렇게 만들어졌는지 알고 싶을 때. 코드가 아니라 기록으로 답합니다. 그것을 도입한 커밋과 PR 토론, 이후의 변경마다 남은 기록을 보고, 그 기록이 빈약하면 다른 출처를 찾습니다. 작성자들이 쓴 내용을 인용하고, 자신의 추론은 추론이라고 표시하며, 기록이 답해 주지 않는 부분은 그렇다고 말합니다. |
 | [`/recall`](./skills/recall/SKILL.md) | 작업을 시작하거나 재개하면서 어떤 주제에 대한 최근 맥락을 되살리고 싶을 때. 내 채팅 기록과 공유 기록에서 복원해 간결한 현재 상태 브리핑으로 돌려줍니다. |
 | [`/ketchup`](./skills/ketchup/SKILL.md) | 내 마지막 메시지 이후 이 채팅에서 바뀐 내용을 쉬운 말과 작은 그림으로 보고 싶을 때. 내 결정을 기다리는 항목은 모두 나열되며, 답장만 읽고도 결정할 수 있습니다. 답장이 길어져도 그렇게 합니다. |
 | [`/ketchup-video`](./skills/ketchup-video/SKILL.md) | `/ketchup` 따라잡기를 자막이 붙은 짧은 슬라이드 영상으로 받고 싶을 때. 내 결정을 기다리는 항목은 영상 아래에 글로 붙습니다. |
@@ -282,7 +281,7 @@ claude code의 plan mode와 codex의 plan mode(`/plan`) 모두 mstack과 잘 맞
 
 모델도 바꿀 수 있습니다. [`/setup-mstack`](./skills/setup-mstack/SKILL.md)을 입력하세요. 접근 가능한 모델을 찾아서, 각 역할(코드, 판단, 리뷰 패널)에 모델을 연결하는 작은 상시 적용 규칙을 만듭니다. 모든 스킬이 이 규칙을 읽고, 규칙이 없으면 합리적인 기본값을 씁니다. 그래서 바꾸고 싶은 부분만 덮어쓰면 됩니다.
 
-기본값이 바뀌면, 바뀌기 전에 만든 규칙은 옛 기본값을 그대로 붙잡고 있습니다. 그럴 때는 그 역할 줄을 지우거나 파일 전체를 지운 뒤 `/setup-mstack`을 다시 실행하세요. 다시 실행해도 기본값과 다르게 고른 역할의 모델은 그대로 남습니다.
+기본값이 바뀌면, 바뀌기 전에 만든 규칙은 옛 기본값을 그대로 붙잡고 있습니다. `/setup-mstack`을 다시 실행할 때까지는 그렇습니다. 다시 실행하면 알아볼 수 있는 옛 기본값은 새 기본값으로 바뀌고, 기본값과 다르게 고른 다른 역할의 모델은 그대로 남습니다. 알아보지 못하는 고정값을 없애려면 먼저 그 역할 줄이나 파일을 지우세요.
 
 ## 자동화
 

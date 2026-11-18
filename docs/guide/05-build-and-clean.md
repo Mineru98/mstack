@@ -57,7 +57,7 @@ In context, that's enough. [`/tdd`](../../skills/tdd/SKILL.md) writes the smalle
 
 ## Clean before you commit
 
-The [Opening a PR playbook](../../skills/mineru-mode/playbooks/opening-a-pr.md) runs a plain-words deslop pass on the diff before each commit and applies [`/unslop`](../../skills/unslop/SKILL.md) to the PR description and commit bodies. The pass is not a separate skill. Ask for it in plain words, with the `no-comments` skill: remove narrating comments, unsupported guards, dead compatibility paths, and unrelated edits.
+The [Opening a PR playbook](../../skills/mineru-mode/playbooks/opening-a-pr.md) runs a plain-words deslop pass on the diff before each commit, and mineru-mode applies [`/unslop`](../../skills/unslop/SKILL.md) to the PR description and commit bodies. The pass is not a separate skill. Ask for it in plain words, with the `no-comments` skill: remove narrating comments, unsupported guards, dead compatibility paths, and unrelated edits.
 
 For prose, `/unslop` takes a target and any extra rules you have:
 
