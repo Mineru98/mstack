@@ -1,6 +1,6 @@
 {
   "name": "mstack",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "if you want to go fast, go deep first. mstack helps you write less, but higher quality code. rigorous agent workflows you can parallelize with confidence.",
   "author": {
     "name": "Mineru98"
