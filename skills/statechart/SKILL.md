@@ -9,6 +9,10 @@ disable-model-invocation: true
 
 The chart shows how a system moves between states, in the words of the person who reads it. That person, the reader, decides whether the behavior is right.
 
+## Language
+
+Write every explanation for the reader in Korean (한글): the state labels from `state()`, the step labels from `step()`, the `title`, the group names, and the hand-off text, including the reader's sentence for each rule and the description of each bug path. Keep TLA+ identifiers, variable names, action names, rule names such as `NoDeadlock`, file names, and commands in their original form.
+
 ## Run
 
 Work in a scratch folder outside the repo. Write a TLA+ spec and its config. Then run:
